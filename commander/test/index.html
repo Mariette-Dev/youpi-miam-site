@@ -416,7 +416,7 @@ td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
     <span class="tag">Mises en bouche · Abidjan</span>
   </div>
 </header>
-<nav class="siteNav" id="siteNav" aria-label="Youpi Miam" hidden><div class="wrap"><a href="/">Nos produits</a><a href="./" aria-current="page">Commander</a><a id="navEspace" href="https://club.youpimiam.com">Mon espace</a></div></nav>
+<nav class="siteNav" id="siteNav" aria-label="Youpi Miam" hidden><div class="wrap"><a href="../">Nos produits</a><a href="./" aria-current="page">Commander</a><a id="navEspace" href="https://club.youpimiam.com">Mon espace</a></div></nav>
 <nav class="crumb" aria-label="Fil d'Ariane">
   <div class="wrap"><small>← Service Traiteur</small><strong>Commande ou devis</strong></div>
 </nav>
@@ -1946,9 +1946,9 @@ update(); renderSlots();
 const PRE_VALEURS = ["cInv", "cType", "evt", "commune", "quartier", "rue", "adresse", "nom", "societe", "tel", "annJ", "annM", "creaJ", "creaM", "email", "parrain", "message", "date", "heure"];
 const PRE_COCHES = ["cSoir", "cEnf", "r-porc", "r-alcool", "r-arachide", "r-vege"];
 const PRE_RADIOS = ["typeClient", "mode", "paiement"];
-const SUR_DOMAINE = /(^|\.)youpimiam\.com$/.test(location.hostname); // page servie sur commander.youpimiam.com (GitHub Pages)
+const SUR_DOMAINE = /(^|\.)youpimiam\.com$|\.github\.io$/.test(location.hostname); // page servie sur commander.youpimiam.com (GitHub Pages)
 const ESPACE_URL = "https://club.youpimiam.com"; // « Mon espace » (espace client)
-if (SUR_DOMAINE) { const n = document.getElementById("siteNav"); if (n) n.hidden = false; }
+if (SUR_DOMAINE) { const n = document.getElementById("siteNav"); if (n) { n.hidden = false; n.querySelector("a").href = MODE_TEST ? "../../" : "../"; } }
 const PAGE_URL = SUR_DOMAINE ? location.origin + location.pathname.replace(/index\.html$/, "") : (MODE_TEST ? "https://claude.ai/artifact/LxZTHYbvNQtqLJkzb6PGZs" : "https://claude.ai/artifact/89G5g1yMRscWZZhTG4fdi8");
 const b64enc = s => btoa(String.fromCharCode(...new TextEncoder().encode(s))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0)));
