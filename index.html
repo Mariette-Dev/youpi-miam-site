@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr"><head>
+<title>Youpi Miam</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Catalogue Youpi Miam : mises en bouche, packs, box et coffrets à Abidjan, avec les prix."><meta property="og:title" content="Youpi Miam"><meta property="og:description" content="Mises en bouche d'exception à Abidjan : produits, prix, packs, box et coffrets."><meta property="og:image" content="https://youpimiam.com/pages/page-1.jpg"><link rel="icon" href="pages/page-1.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@500;600&display=swap">
+<style>
+/* Une seule ambiance noir et or (identité Youpi Miam) : pages du catalogue empilées, barre d'action en bas */
+:root{--bg:#0d0b08;--fg:#efe3c4;--muted:#a8925e;--gold:#d9b866;--ink:#14100b;--wa:#1f7a4a;color-scheme:dark;
+ --display:'Playfair Display',Georgia,serif;--body:Montserrat,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body)}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 110px;display:flex;flex-direction:column;gap:18px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(22px,5vw,30px);text-align:center;color:var(--gold);margin:6px 0 0;text-wrap:balance}
+.lead{text-align:center;color:var(--muted);font-size:13px;letter-spacing:.04em;margin:0}
+.pages img{display:block;width:100%;height:auto;border:1px solid #3a2f1c;border-radius:4px;background:#1a160f;aspect-ratio:210/297}
+.pages{display:flex;flex-direction:column;gap:14px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(13,11,8,.94);border-top:1px solid #3a2f1c;
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.bar a{flex:1 1 160px;max-width:300px;text-align:center;text-decoration:none;font-weight:600;font-size:14px;padding:12px 14px;border-radius:999px}
+.bar a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.cmd{background:linear-gradient(120deg,#9a7633,#e8cf86,#b78f3e);color:var(--ink)}
+.pdf{border:1px solid var(--gold);color:var(--gold)}
+.wa{background:var(--wa);color:#fff}
+.site{position:sticky;top:0;z-index:5;background:rgba(13,11,8,.96);border-bottom:1px solid #3a2f1c}
+.site div{max-width:820px;margin:0 auto;display:flex;gap:4px;justify-content:center;padding:8px 10px}
+.site a{color:var(--fg);text-decoration:none;font-weight:600;font-size:13.5px;padding:8px 12px;border-radius:999px;white-space:nowrap}
+.site a[aria-current]{background:var(--gold);color:var(--ink)}
+.site a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+</style>
+</head><body>
+<nav class="site" aria-label="Youpi Miam"><div><a href="/" aria-current="page">Nos produits</a><a href="/commander/">Commander</a><a href="https://club.youpimiam.com">Mon espace</a></div></nav>
+<main class="wrap">
+ <h1>Nos produits</h1>
+ <p class="lead">Mises en bouche d'exception · Abidjan · Prix au 23 novembre 2026</p>
+ <div class="pages">
+  <img src="pages/page-1.jpg" alt="Couverture du catalogue Youpi Miam">
+  <img src="pages/page-2.jpg" alt="Mises en bouche, partie 1" loading="lazy">
+  <img src="pages/page-3.jpg" alt="Mises en bouche, partie 2" loading="lazy">
+  <img src="pages/page-4.jpg" alt="Brochettes et crêpes" loading="lazy">
+  <img src="pages/page-5.jpg" alt="Packs et packs à composer" loading="lazy">
+  <img src="pages/page-6.jpg" alt="Box individuelles, cadeaux et sachets merci" loading="lazy">
+  <img src="pages/page-7.jpg" alt="Douceurs et informations pratiques" loading="lazy">
+  <img src="pages/page-8.jpg" alt="Nos commandes en vrai, chez nos clients" loading="lazy">
+  <img src="pages/page-9.jpg" alt="Comment commander" loading="lazy">
+ </div>
+</main>
+<nav class="bar" aria-label="Commander">
+ <a class="cmd" href="/commander/">Commander</a>
+ <a class="pdf" href="catalogue-youpi-miam.pdf" download>Télécharger le PDF</a>
+ <a class="wa" href="https://wa.me/2250767606019" target="_blank" rel="noopener">WhatsApp 07 67 60 60 19</a>
+</nav>
+
+</body></html>
