@@ -42,6 +42,7 @@ a{color:var(--accent)}
 
 /* En-tête */
 .top{border-bottom:1px solid var(--line);background:var(--bg)}
+@keyframes ajoutFlash{0%,60%{box-shadow:0 0 0 3px var(--sun)}100%{box-shadow:none}}.ajoutFlash{animation:ajoutFlash 2.4s ease-out}
 .siteNav{background:#2b1520}.siteNav .wrap{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding-block:8px}.siteNav a{color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;padding:7px 14px;border-radius:999px}.siteNav a[aria-current]{background:var(--accent)}.siteNav a:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
 .espaceBox{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:12px 14px;margin:12px 0;text-align:left}.espaceBox p{margin:0 0 8px}
 .top .wrap{display:flex;align-items:center;gap:12px;padding-block:14px}
@@ -2095,6 +2096,15 @@ if (estPre()) {
     setTimeout(() => window.scrollTo({top: 0, behavior: "smooth"}), 300);
   } catch (e) {}
 }
+
+// Lien « Commander ce produit » depuis le catalogue (23/11/2026) : #ajout=id1,id2 ajoute le minimum de chaque produit, sans écran récapitulatif.
+{ const ma = location.hash.match(/^#ajout=([^&]+)/);
+  if (ma && !estPre()) { try {
+    setMode("commande"); let premier = null;
+    decodeURIComponent(ma[1]).split(",").forEach(id => { const q = prodById(id), el = $("p-" + id); if (q && el && !qty[id]) { el._set(aLaPiece(q) ? minPiece(q) : 1); premier = premier || el; } });
+    try { majGroupes(); } catch (e) {}
+    if (premier) setTimeout(() => { premier.scrollIntoView({behavior: "smooth", block: "center"}); premier.classList.add("ajoutFlash"); }, 400);
+  } catch (e) {} } }
 
 // Carnet de clients du Mode équipe : gardé UNIQUEMENT sur l'appareil de l'équipe (localStorage), jamais dans le lien public ni ailleurs.
 const CARNET_KEY = "ym-carnet";
