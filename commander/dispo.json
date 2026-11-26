@@ -1,1 +1,1 @@
-{"maj": "2026-11-24T08:20:46+00:00", "capaciteJour": 600, "livraisonsParCreneau": 2, "jours": {}, "fermes": [], "creneauxFermes": {}, "epuises": []}
+{"maj": "2026-11-26T23:21:15+00:00", "capaciteJour": 600, "livraisonsParCreneau": 2, "jours": {"2026-11-27": {"pieces": 60, "creneaux": {"08": 1}}, "2026-11-29": {"pieces": 136, "creneaux": {"10": 1}}}, "fermes": [], "creneauxFermes": {}, "epuises": []}
